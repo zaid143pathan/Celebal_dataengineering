@@ -1,0 +1,45 @@
+Section A — SQL Basics (SELECT, Constraints, Primary Keys) 
+
+Ques/Ans Week2
+
+Ques.1 Write a query to display all columns and rows from the customer's table.
+
+Ans.1 Select * FROM customers;
+
+
+
+Ques.2 Retrieve only the first_name, last_name, and city of all customers
+
+Ans.2 select first_name, last_name, city
+      FROM customers;
+
+
+
+Ques.3 List all unique categories available in the products table.
+
+Ans.3 Select DISTINCT category FROM products;
+
+
+
+Ques.4 Identify the Primary Key of each table in the schema. Explain why a Primary Key must be unique and NOT NULL.
+
+Ans.4. customer_id → customers table and product_id → products table and order_id → orders 
+table
+A Primary Key is used to uniquely identify each row in a table, It must be:
+1.UNIQUE = so that no two rows have the same identity
+2.NOT NULL = because every record must have a valid identifier
+Without a primary Key it becomes difficult to uniquely access, updates between tables
+
+
+
+Ques5.What constraints are applied to the email column in the customers table? What would happen if you tried to insert a duplicate email?
+
+Ans.5 Email uses UNIQUE constraint.
+
+
+
+Ques.6 Try inserting a product with unit_price = -50. What happens and which constraint prevents it?
+
+Ans.6 when this query is ecxecuted the database will give an error as product price can not be negative this insertion fails and the record is not added to table
+
+This happens due to the "check" constraint on the unit_price which ensures that only positive and valid prices are allowed in the database.
